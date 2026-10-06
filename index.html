@@ -29,14 +29,26 @@ h1{font-size:22px;color:#333;margin:10px 0 20px}
 <div id="step2" class="card hidden"><img class="pfp" src="https://zaf01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fi.imgflip.com%2F2fm6x.jpg&data=05%7C02%7C44ha2507628%40myboston.co.za%7Cd4e74a3633f74ae4fa5108df2390ac2c%7C2aada6576d1e4320b92edd700921dda5%7C0%7C0%7C639268776420708309%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=HLLUMGAzgV8K%2FQHeVeH0NWqiEl15kGgA3w9rBQ1IuZ8%3D&reserved=0" style="width:110px;height:110px"><div class="big-text">WAIT YOU ACTUALLY SAID YES?? 😭</div><p class="sub">I was so ready for you to say no 🥺</p><button class="btn btn-yes" onclick="goStep(3)">okay okay! ➜</button></div>
 <div id="step3" class="card hidden"><h1>So... when are you free? 📅</h1><div class="input-group"><label>Pick a Day</label><input type="date" id="dateInput"></div><div class="input-group"><label>What Time?</label><select id="timeInput"><option disabled selected>Select a time...</option><option>2:00 PM — day date? cute</option><option>5:00 PM — this is the right answer tbh</option><option>6:00 PM — sunset vibes</option><option>7:00 PM — night out energy</option></select></div><button class="pink-btn" onclick="goStep(4)">set the date! 💕</button></div>
 <div id="step4" class="card hidden"><h1>What should we do? ✨</h1><div class="food-grid"><div class="food" onclick="selectFood(this,'Bowling')">🎳<br>Bowling</div><div class="food" onclick="selectFood(this,'Arcade Games')">🕹️<br>Arcade</div><div class="food" onclick="selectFood(this,'Mini Golf')">⛳️<br>Mini Golf</div><div class="food" onclick="selectFood(this,'Carnival')">🎡<br>Carnival</div><div class="food" onclick="selectFood(this,'Go Kart')">🏎️<br>Go Kart</div><div class="food" onclick="selectFood(this,'Zoo')">🦁<br>Zoo</div><div class="food" onclick="selectFood(this,'Picnic')">🧺<br>Picnic</div><div class="food" onclick="selectFood(this,'Ice Cream')">🍦<br>Ice Cream</div><div class="food" onclick="selectFood(this,'Movies')">🍿<br>Movies</div></div><button class="pink-btn" onclick="finishAndText()">that's the one! 🌸</button></div>
-<div id="step5" class="card hidden"><img class="final-img" src="https://zaf01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1517849845537-4d257902454a%3Fw%3D300&data=05%7C02%7C44ha2507628%40myboston.co.za%7Cd4e74a3633f74ae4fa5108df2390ac2c%7C2aada6576d1e4320b92edd700921dda5%7C0%7C0%7C639268776420720175%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=wxIph22rOS7PzoWcZGJjLMfzoPBiraeB35C3eWw8vko%3D&reserved=0"><h1 style="font-size:18px">glad you didn't say no. be ready by 6, I'm coming to get you 😍</h1><p style="font-size:14px;color:#ff8fa3;margin-top:15px">Tap below to text me!</p><button class="pink-btn" onclick="sendSMS()">Send me a Text 💌</button></div>
+<div id="step5" class="card hidden">
+<img class="final-img" src="https://zaf01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1517849845537-4d257902454a%3Fw%3D300&data=05%7C02%7C44ha2507628%40myboston.co.za%7C731fd25e8c23453706eb08df239847d1%7C2aada6576d1e4320b92edd700921dda5%7C0%7C0%7C639268809119970289%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=8cDMvULS2M5czlW%2BDcbqsTiX9xrPkr7K6bgac0GD0Ds%3D&reserved=0">
+<h1 id="finalMessage" style="font-size:18px">glad you didn't say no. be ready by 6, I'm coming to get you 😍</h1>
+<p style="font-size:13px;color:#888;margin-top:4px;font-style:italic;">p.s i made a whole website for you 🥺</p>
+<p style="font-size:14px;color:#ff8fa3;margin-top:15px">Tap below to text me!</p>
+<button class="pink-btn" onclick="sendSMS()">Send me a Text 💌</button>
+</div>
+
 <script>
 const YOUR_NUMBER = "+27658485096";
 let selectedFood = "";
 function evade(){const b=document.getElementById('noBtn');b.classList.add('evading');b.style.left=Math.random()*(window.innerWidth-b.offsetWidth-20)+'px';b.style.top=Math.random()*(window.innerHeight-b.offsetHeight-20)+'px';}
 function goStep(n){document.querySelectorAll('.card').forEach(x=>x.classList.add('hidden'));document.getElementById('step'+n).classList.remove('hidden');}
 function selectFood(el,name){document.querySelectorAll('.food').forEach(f=>f.classList.remove('selected'));el.classList.add('selected');selectedFood=name;}
-function finishAndText(){if(!selectedFood){alert('Pick one first! 🌸');return;}goStep(5);}
+function finishAndText(){
+  if(!selectedFood){alert('Pick one first! 🌸');return;}
+  const time = document.getElementById('timeInput').value || "6";
+  document.getElementById('finalMessage').innerText = `glad you didn't say no. we'll meet up at ${time} 😍`;
+  goStep(5);
+}
 function sendSMS(){
   const date=document.getElementById('dateInput').value||"not picked";
   const time=document.getElementById('timeInput').value||"not picked";
