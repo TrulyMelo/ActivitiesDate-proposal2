@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Date?</title>
+<link href="https://zaf01.safelinks.protection.outlook.com/?url=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DFredoka%3Awght%40400%3B600%26display%3Dswap&data=05%7C02%7C44ha2507628%40myboston.co.za%7Cd4e74a3633f74ae4fa5108df2390ac2c%7C2aada6576d1e4320b92edd700921dda5%7C0%7C0%7C639268776420678382%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=4kutHkFb%2BZD3QWJ4Bmhfzph0PowX6T%2F6Ef%2FiUu2%2BSL8%3D&reserved=0" rel="stylesheet">
+<style>
+*{font-family:'Fredoka',sans-serif;box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#fef6f5;display:flex;justify-content:center;align-items:center}
+.card{background:white;width:92%;max-width:460px;padding:28px;border-radius:24px;box-shadow:0 10px 40px rgba(255,77,109,0.15);text-align:center}
+.pfp{width:90px;height:90px;border-radius:20px;object-fit:cover;margin:0 auto 12px;display:block}
+h1{font-size:22px;color:#333;margin:10px 0 20px}
+.btn{width:80%;margin:10px auto;padding:14px;border-radius:30px;border:none;font-size:16px;cursor:pointer;display:block}
+.btn-yes{background:#ff8fa3;color:white;font-weight:600}
+.btn-no{background:#ffe3e8;color:#ff6b8a;position:relative}
+.btn-no.evading{position:fixed;z-index:999;min-width:120px}
+.big-text{font-weight:600;font-size:28px;color:#222}
+.sub{color:#777;font-size:13px}
+.input-group{text-align:left;margin:12px 0}
+.input-group label{font-size:13px;color:#888;display:block;margin-bottom:5px}
+.input-group input, .input-group select{width:100%;padding:12px;border:1.5px solid #ffe3e8;border-radius:12px;background:#fff8f9;outline:none}
+.pink-btn{width:100%;background:#ff8fa3;color:white;border:none;padding:13px;border-radius:30px;font-weight:600;cursor:pointer;margin-top:15px}
+.food-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}
+.food{padding:16px 8px;border:2px solid #ffe3e8;border-radius:16px;background:#fff8f9;cursor:pointer}
+.food.selected{border-color:#ff8fa3;background:#ffe3e8;transform:scale(1.04)}
+.final-img{width:180px;height:180px;border-radius:50%;object-fit:cover;margin:10px auto;display:block}
+.hidden{display:none}
+</style></head><body>
+<div id="step1" class="card"><img class="pfp" src="https://zaf01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1601758228041-f3b2795255f1%3Fw%3D200&data=05%7C02%7C44ha2507628%40myboston.co.za%7Cd4e74a3633f74ae4fa5108df2390ac2c%7C2aada6576d1e4320b92edd700921dda5%7C0%7C0%7C639268776420696931%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=mE0bKHcgtB7USJkBJ02MVcCh1rfFpuCZUXicVCKlmt8%3D&reserved=0"><h1>🌸 Will you go on a date with me? 🌸</h1><button class="btn btn-yes" onclick="goStep(2)">yes 🌷</button><button id="noBtn" class="btn btn-no" onmouseover="evade()" onclick="evade()">no 😢</button></div>
+<div id="step2" class="card hidden"><img class="pfp" src="https://zaf01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fi.imgflip.com%2F2fm6x.jpg&data=05%7C02%7C44ha2507628%40myboston.co.za%7Cd4e74a3633f74ae4fa5108df2390ac2c%7C2aada6576d1e4320b92edd700921dda5%7C0%7C0%7C639268776420708309%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=HLLUMGAzgV8K%2FQHeVeH0NWqiEl15kGgA3w9rBQ1IuZ8%3D&reserved=0" style="width:110px;height:110px"><div class="big-text">WAIT YOU ACTUALLY SAID YES?? 😭</div><p class="sub">I was so ready for you to say no 🥺</p><button class="btn btn-yes" onclick="goStep(3)">okay okay! ➜</button></div>
+<div id="step3" class="card hidden"><h1>So... when are you free? 📅</h1><div class="input-group"><label>Pick a Day</label><input type="date" id="dateInput"></div><div class="input-group"><label>What Time?</label><select id="timeInput"><option disabled selected>Select a time...</option><option>2:00 PM — day date? cute</option><option>5:00 PM — this is the right answer tbh</option><option>6:00 PM — sunset vibes</option><option>7:00 PM — night out energy</option></select></div><button class="pink-btn" onclick="goStep(4)">set the date! 💕</button></div>
+<div id="step4" class="card hidden"><h1>What should we do? ✨</h1><div class="food-grid"><div class="food" onclick="selectFood(this,'Bowling')">🎳<br>Bowling</div><div class="food" onclick="selectFood(this,'Arcade Games')">🕹️<br>Arcade</div><div class="food" onclick="selectFood(this,'Mini Golf')">⛳️<br>Mini Golf</div><div class="food" onclick="selectFood(this,'Carnival')">🎡<br>Carnival</div><div class="food" onclick="selectFood(this,'Go Kart')">🏎️<br>Go Kart</div><div class="food" onclick="selectFood(this,'Zoo')">🦁<br>Zoo</div><div class="food" onclick="selectFood(this,'Picnic')">🧺<br>Picnic</div><div class="food" onclick="selectFood(this,'Ice Cream')">🍦<br>Ice Cream</div><div class="food" onclick="selectFood(this,'Movies')">🍿<br>Movies</div></div><button class="pink-btn" onclick="finishAndText()">that's the one! 🌸</button></div>
+<div id="step5" class="card hidden"><img class="final-img" src="https://zaf01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1517849845537-4d257902454a%3Fw%3D300&data=05%7C02%7C44ha2507628%40myboston.co.za%7Cd4e74a3633f74ae4fa5108df2390ac2c%7C2aada6576d1e4320b92edd700921dda5%7C0%7C0%7C639268776420720175%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=wxIph22rOS7PzoWcZGJjLMfzoPBiraeB35C3eWw8vko%3D&reserved=0"><h1 style="font-size:18px">glad you didn't say no. be ready by 6, I'm coming to get you 😍</h1><p style="font-size:14px;color:#ff8fa3;margin-top:15px">Tap below to text me!</p><button class="pink-btn" onclick="sendSMS()">Send me a Text 💌</button></div>
+<script>
+const YOUR_NUMBER = "+27658485096";
+let selectedFood = "";
+function evade(){const b=document.getElementById('noBtn');b.classList.add('evading');b.style.left=Math.random()*(window.innerWidth-b.offsetWidth-20)+'px';b.style.top=Math.random()*(window.innerHeight-b.offsetHeight-20)+'px';}
+function goStep(n){document.querySelectorAll('.card').forEach(x=>x.classList.add('hidden'));document.getElementById('step'+n).classList.remove('hidden');}
+function selectFood(el,name){document.querySelectorAll('.food').forEach(f=>f.classList.remove('selected'));el.classList.add('selected');selectedFood=name;}
+function finishAndText(){if(!selectedFood){alert('Pick one first! 🌸');return;}goStep(5);}
+function sendSMS(){
+  const date=document.getElementById('dateInput').value||"not picked";
+  const time=document.getElementById('timeInput').value||"not picked";
+  const rawMessage=`Heyy! I SAID YES!! 😍\n\nDate: ${date}\nTime: ${time}\nActivity: ${selectedFood}\n\nCan't wait!! 💕`;
+  const message=encodeURIComponent(rawMessage);
+  window.location.href=`sms:${YOUR_NUMBER}?&body=${message}`;
+}
+</script></body></html>
